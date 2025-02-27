@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Patients</title>
+    <link rel="stylesheet" href="../src/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Dashboard</a></li>
+                <li><a href="patients.html">🩺 Suivi Patient</a></li>
+                <li><a href="messages.html">💬 Messagerie</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="section">
+            <h2>Gestion des Patients</h2>
+            <form>
+                <input type="text" name="patient_name" placeholder="Nom du patient" required>
+                <input type="text" name="diagnosis" placeholder="Diagnostic" required>
+                <input type="text" name="treatment" placeholder="Traitement" required>
+                <button type="submit">Ajouter</button>
+            </form>
+            <ul id="patients-list" class="list"></ul>
+        </section>
+    </main>
+    <script src="../src/patients.js"></script>
+</body>
+</html>

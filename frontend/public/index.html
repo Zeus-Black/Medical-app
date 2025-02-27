@@ -3,10 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical App</title>
+    <title>Medical Hub - Dashboard</title>
+    <link rel="stylesheet" href="../src/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div id="root"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Dashboard</a></li>
+                <li><a href="patients.html">🩺 Suivi Patient</a></li>
+                <li><a href="messages.html">💬 Messagerie</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="section">
+            <h2>📊 Dashboard - Supervision des Personnes les plus connes de la classe</h2>
+            <div class="chart-container">
+                <canvas id="patientsChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="messagesChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="syndrome667Chart"></canvas>
+            </div>
+        </section>
+    </main>
+    <script>
+        const ctx1 = document.getElementById('patientsChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: ['William Boudier', 'Lucas Lantrua', 'Noa Levy'],
+                datasets: [{
+                    label: 'Répartition des patients',
+                    data: [120, 90, 60],
+                    backgroundColor: ['#4CAF50', '#FF9800', '#2196F3']
+                }]
+            }
+        });
+
+        const ctx2 = document.getElementById('messagesChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'],
+                datasets: [{
+                    label: 'Messages échangés',
+                    data: [10, 25, 18, 30, 22],
+                    backgroundColor: '#673AB7'
+                }]
+            }
+        });
+
+        const ctx3 = document.getElementById('syndrome667Chart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: ['Freeze Corleon', 'Elie Rabi', 'John Doe', 'Jane Smith', 'Random Patient'],
+                datasets: [{
+                    label: 'Syndrome 667 - Niveau Critique',
+                    data: [95, 88, 60, 55, 40],
+                    backgroundColor: ['#e74c3c', '#c0392b', '#f39c12', '#16a085', '#2980b9']
+                }]
+            }
+        });
+    </script>
 </body>
 </html>
-
